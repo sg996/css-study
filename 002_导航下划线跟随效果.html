@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            border: 1px solid blanchedalmond;
+        }
+        ul li{
+            padding: 20px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        ul li::before{
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 0;
+            height: calc(100% - 2px);
+            border-bottom: 2px solid red;
+            transition: width .5s;
+        }
+        ul li:hover::before{
+            left: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>Nodejs</li>
+        <li>Vue</li>
+        <li>React</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0;
+            width: 100%;
+            min-height: 100vh;
+            background: rgb(15, 15, 15);
+        }
+
+        .shutter-screen {
+            width: 100%;
+            height: 100vh;
+            /* display: grid;
+            grid-auto-flow: row;
+            place-content: center center;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: 300px;
+            column-gap: 30px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .shutter-screen .item {
+            width: 100px;
+            height: 300px;
+            margin: 0 15px;
+            border-radius: 6px;
+            background: rgb(2, 182, 253);
+            opacity: .5;
+            position: relative;
+            overflow: hidden;
+            transition: all .5s;
+        }
+
+        .shutter-screen .item .show {
+            width: 400px;
+            height: 300px;
+            position: absolute;
+            left: -400px;
+            top: 0;
+            transition: all .5s;
+        }
+
+        .shutter-screen .item .show>p {
+            position: absolute;
+            bottom: 2em;
+            left: 2em;
+            line-height: 2;
+            margin: 0px;
+            color: #fff;
+            /* white-space: pre; */
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .shutter-screen .item .show img {
+            max-width: 256px;
+            height: 256px;
+            top: 22px;
+            left: 22px;
+            margin: auto;
+            position: absolute;
+            opacity: 0.16;
+        }
+
+        .shutter-screen .item.active {
+            width: 500px;
+            height: 300px;
+            opacity: 1;
+        }
+
+        .shutter-screen .item.active .show {
+            left: 0;
+        }
+
+        .shutter-screen .item .item-main {
+            width: 100px;
+            height: 300px;
+            font-size: 22px;
+            letter-spacing: .55em;
+            font-weight: bold;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            writing-mode: vertical-lr;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shutter-screen">
+        <a href="#" class="item active">
+            <div class="show">
+                <img src="https://cube.elemecdn.com/0/c7/731d222b16d4537c0dcb5dfdc0402svg.svg" alt="蜂鸟配送">
+                <p>全职收入多劳多得<br />稳定保障风险少</p>
+            </div>
+            <div class="item-main">蜂鸟配送</div>
+        </a>
+        <a href="#" class="item">
+            <div class="show">
+                <img src="https://cube.elemecdn.com/a/0a/2e70985f1636fdad57a357eb53639svg.svg" alt="蜂鸟配送">
+                <p>共创合作，领跑市场<br />专业扶持为你保驾护航</p>
+            </div>
+            <div class="item-main">代理加盟</div>
+        </a>
+        <a href="#" class="item">
+            <div class="show">
+                <img src="https://cube.elemecdn.com/0/28/e556e02b60a8a25e1d3d6ef676523svg.svg" alt="蜂鸟配送">
+                <p>多一种开店方式<br />连接千家万户的餐桌</p>
+            </div>
+            <div class="item-main">商家开店</div>
+        </a>
+        <a href="#" class="item">
+            <div class="show">
+                <img src="https://cube.elemecdn.com/a/3d/28b5752f53afa76c5abf902f78355svg.svg" alt="蜂鸟配送">
+                <p>准时必达，超时秒赔<br />每天领取惊喜红包</p>
+            </div>
+            <div class="item-main">外卖点餐</div>
+        </a>
+    </div>
+    <script>
+        const aList = document.querySelectorAll('.shutter-screen .item')
+        aList.forEach((item, index) => {
+            item.addEventListener('mouseenter', function (e) {
+                // HTMLCollection(4) [a.item.active, a.item, a.item, a.item] 伪数组使用forEach遍历报错
+                // let el = [...e.target.parentNode.children]
+                for (let i in aList) {
+                    (index != i) && (aList[i].className = 'item')
+                }
+                e.target.classList.add('active')
+            })
+        })
+    </script>
+</body>
+
+</html>

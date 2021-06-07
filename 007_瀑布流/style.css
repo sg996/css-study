@@ -1,0 +1,78 @@
+/* 多栏布局 */
+body{
+    margin: 10px;
+    box-sizing: border-box;
+}
+.masonry{
+    column-count:4;
+    column-gap: 0;
+}
+.item{
+    padding: 5px;
+    position: relative;
+    counter-increment: item-counter;
+}
+.item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.item::before{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: #333;
+    color: #fff;
+    content: counter(item-counter);
+}
+
+/* 弹性布局 */
+/* body{
+    box-sizing: border-box;
+    margin: 10px;
+}
+.masonry{
+    display: flex;
+    flex-flow: column wrap;
+    height: 1000px;
+}
+.item{
+    box-sizing: border-box;
+    width: 25%;
+    padding: 5px;
+    position: relative;
+    counter-increment: item-counter;
+}
+.item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.item::before{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: #333;
+    color: #fff;
+    content: counter(item-counter);
+}
+.item:nth-child(4n+1){
+    order: 1;
+}
+.item:nth-child(4n+2){
+    order: 2;
+}
+.item:nth-child(4n+3){
+    order: 3;
+}
+.item:nth-child(4n){
+    order: 4;
+} */
