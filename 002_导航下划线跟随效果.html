@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        ul{
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: consolas;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #181818;
+        }
+
+        ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            border: 1px solid blanchedalmond;
         }
-        ul li{
+
+        ul li {
+            color: #fff;
             padding: 20px;
             position: relative;
             cursor: pointer;
             overflow: hidden;
         }
-        ul li::before{
-            content:'';
+
+        ul li::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 100%;
@@ -28,12 +45,14 @@
             border-bottom: 2px solid red;
             transition: width .5s;
         }
-        ul li:hover::before{
+
+        ul li:hover::before {
             left: 0;
             width: 100%;
         }
     </style>
 </head>
+
 <body>
     <ul>
         <li>HTML</li>
@@ -44,4 +63,5 @@
         <li>React</li>
     </ul>
 </body>
+
 </html>
