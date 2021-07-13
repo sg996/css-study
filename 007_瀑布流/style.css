@@ -1,23 +1,27 @@
 /* 多栏布局 */
-body{
+body {
     margin: 10px;
     box-sizing: border-box;
 }
-.masonry{
-    column-count:4;
+
+.masonry {
+    column-count: 4;
     column-gap: 0;
 }
-.item{
+
+.item {
     padding: 5px;
     position: relative;
     counter-increment: item-counter;
 }
-.item img{
+
+.item img {
     display: block;
     width: 100%;
     height: auto;
 }
-.item::before{
+
+.item::before {
     position: absolute;
     left: 5px;
     top: 5px;
